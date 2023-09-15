@@ -1,0 +1,98 @@
+--
+-- File generated with SQLiteStudio v3.4.3 on Пт сен 15 12:47:31 2023
+--
+-- Text encoding used: UTF-8
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: explorers
+CREATE TABLE IF NOT EXISTS explorers (id INTEGER PRIMARY KEY);
+
+-- Table: facts
+CREATE TABLE IF NOT EXISTS facts (id INTEGER PRIMARY KEY, fact_name INTEGER, fact TEXT);
+INSERT INTO facts (id, fact_name, fact) VALUES (1, 'SMALL WORLD', 'Mercury is the smallest planet in our solar system – only slightly larger than Earth''s Moon. ');
+INSERT INTO facts (id, fact_name, fact) VALUES (2, 'INSIDE TRACK', 'Mercury is the planet that orbits the closest to the Sun.');
+INSERT INTO facts (id, fact_name, fact) VALUES (3, 'FASTEST PLANET', 'Mercury is the fastest planet in our solar system – traveling through space at nearly 29 miles (47 kilometers) per second. The closer a planet is to the Sun, the faster it travels. Since Mercury is the fastest planet and has the shortest distance to travel around the Sun, it has the shortest year of all the planets in our solar system – 88 days.');
+INSERT INTO facts (id, fact_name, fact) VALUES (4, 'ROUGH SURFACE', 'Mercury is a rocky planet, also known as a terrestrial planet. Mercury has a solid, cratered surface, much like the Earth''s moon.');
+INSERT INTO facts (id, fact_name, fact) VALUES (5, 'CAN''T BREATHE THERE', 'Mercury''s thin atmosphere, or exosphere, is composed mostly of oxygen (O2), sodium (Na), hydrogen (H2), helium (He), and potassium (K). ');
+INSERT INTO facts (id, fact_name, fact) VALUES (6, 'MOONLESS', 'Mercury has no moons. ');
+INSERT INTO facts (id, fact_name, fact) VALUES (7, 'RINGLESS', 'There are no rings around Mercury. ');
+INSERT INTO facts (id, fact_name, fact) VALUES (8, 'TOUGH PLACE FOR LIFE', 'It is unlikely that life as we know it could survive on Mercury due to solar radiation, and extreme temperatures.');
+INSERT INTO facts (id, fact_name, fact) VALUES (9, 'BIG SUN', 'Standing on Mercury''s surface at its closest approach to the Sun, our star would appear more than three times larger than it does on Earth.');
+INSERT INTO facts (id, fact_name, fact) VALUES (10, 'ROBOTIC VISITORS', 'Two NASA missions have explored Mercury: Mariner 10 was the first to fly by Mercury, and MESSENGER was the first to orbit. ESA''s BepiColombo is on its way to Mercury.');
+INSERT INTO facts (id, fact_name, fact) VALUES (11, 'TOXIC TWIN', 'Venus is often called "Earth’s twin" because they’re similar in size and structure, but Venus has extreme surface heat and a dense, toxic atmosphere. If the Sun were as tall as a typical front door, Earth and Venus would each be about the size of a nickel.');
+
+-- Table: facts_planets
+CREATE TABLE IF NOT EXISTS facts_planets (planet_id INTEGER REFERENCES planets (id), fact_id INTEGER REFERENCES facts (id));
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 1);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 2);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 3);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 4);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 5);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 6);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 7);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 8);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 9);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (1, 10);
+INSERT INTO facts_planets (planet_id, fact_id) VALUES (2, 11);
+
+-- Table: in_depth
+CREATE TABLE IF NOT EXISTS in_depth (id INTEGER PRIMARY KEY, common TEXT, namesake TEXT, potential_for_life TEXT, size_and_distance TEXT, orbit_rotation TEXT, moons TEXT, rings TEXT, formation TEXT, structure TEXT, surface TEXT, atmosphere TEXT, magnetosphere TEXT);
+INSERT INTO in_depth (id, common, namesake, potential_for_life, size_and_distance, orbit_rotation, moons, rings, formation, structure, surface, atmosphere, magnetosphere) VALUES (1, 'The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth''s Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter.
+
+Mercury''s surface temperatures are both extremely hot and cold. Because the planet is so close to the Sun, day temperatures can reach highs of 800°F (430°C). Without an atmosphere to retain that heat at night, temperatures can dip as low as -290°F (-180°C).
+
+Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest planet, zipping around the Sun every 88 Earth days.', 'Mercury is appropriately named for the swiftest of the ancient Roman gods.', 'Mercury''s environment is not conducive to life as we know it. The temperatures and solar radiation that characterize this planet are most likely too extreme for organisms to adapt to.', 'With a radius of 1,516 miles (2,440 kilometers), Mercury is a little more than 1/3 the width of Earth. If Earth were the size of a nickel, Mercury would be about as big as a blueberry.
+
+From an average distance of 36 million miles (58 million kilometers), Mercury is 0.4 astronomical units away from the Sun. One astronomical unit (abbreviated as AU), is the distance from the Sun to Earth. From this distance, it takes sunlight 3.2 minutes to travel from the Sun to Mercury.', 'Mercury''s highly eccentric, egg-shaped orbit takes the planet as close as 29 million miles (47 million kilometers) and as far as 43 million miles (70 million kilometers) from the Sun. It speeds around the Sun every 88 days, traveling through space at nearly 29 miles (47 kilometers) per second, faster than any other planet.
+
+Mercury spins slowly on its axis and completes one rotation every 59 Earth days. But when Mercury is moving fastest in its elliptical orbit around the Sun (and it is closest to the Sun), each rotation is not accompanied by sunrise and sunset like it is on most other planets. The morning Sun appears to rise briefly, set, and rise again from some parts of the planet''s surface. The same thing happens in reverse at sunset for other parts of the surface. One Mercury solar day (one full day-night cycle) equals 176 Earth days – just over two years on Mercury.
+
+Mercury''s axis of rotation is tilted just 2 degrees with respect to the plane of its orbit around the Sun. That means it spins nearly perfectly upright and so does not experience seasons as many other planets do.', 'Mercury doesn''t have moons.', 'Mercury doesn''t have rings.', 'Mercury formed about 4.5 billion years ago when gravity pulled swirling gas and dust together to form this small planet nearest the Sun. Like its fellow terrestrial planets, Mercury has a central core, a rocky mantle, and a solid crust.', 'Mercury is the second densest planet, after Earth. It has a large metallic core with a radius of about 1,289 miles (2,074 kilometers), about 85 percent of the planet''s radius. There is evidence that it is partly molten or liquid. Mercury''s outer shell, comparable to Earth''s outer shell (called the mantle and crust), is only about 400 kilometers (250 miles) thick.', 'Mercury''s surface resembles that of Earth''s Moon, scarred by many impact craters resulting from collisions with meteoroids and comets. Craters and features on Mercury are named after famous deceased artists, musicians, or authors, including children''s author Dr. Seuss and dance pioneer Alvin Ailey.
+
+Very large impact basins, including Caloris (960 miles or 1,550 kilometers in diameter) and Rachmaninoff (190 miles, or 306 kilometers in diameter), were created by asteroid impacts on the planet''s surface early in the solar system''s history. While there are large areas of smooth terrain, there are also cliffs, some hundreds of miles long and soaring up to a mile high. They rose as the planet''s interior cooled and contracted over the billions of years since Mercury formed.
+
+Most of Mercury''s surface would appear greyish-brown to the human eye. The bright streaks are called "crater rays." They are formed when an asteroid or comet strikes the surface. The tremendous amount of energy that is released in such an impact digs a big hole in the ground, and also crushes a huge amount of rock under the point of impact. Some of this crushed material is thrown far from the crater and then falls to the surface, forming the rays. Fine particles of crushed rock are more reflective than large pieces, so the rays look brighter. The space environment – dust impacts and solar-wind particles – causes the rays to darken with time.
+
+Temperatures on Mercury are extreme. During the day, temperatures on the surface can reach 800 degrees Fahrenheit (430 degrees Celsius). Because the planet has no atmosphere to retain that heat, nighttime temperatures on the surface can drop to minus 290 degrees Fahrenheit (minus 180 degrees Celsius).
+
+Mercury may have water ice at its north and south poles inside deep craters, but only in regions in permanent shadows. In those shadows, it could be cold enough to preserve water ice despite the high temperatures on sunlit parts of the planet.', 'Instead of an atmosphere, Mercury possesses a thin exosphere made up of atoms blasted off the surface by the solar wind and striking meteoroids. Mercury''s exosphere is composed mostly of oxygen, sodium, hydrogen, helium, and potassium.', 'Mercury''s magnetic field is offset relative to the planet''s equator. Though Mercury''s magnetic field at the surface has just 1% the strength of Earth''s, it interacts with the magnetic field of the solar wind to sometimes create intense magnetic tornadoes that funnel the fast, hot solar wind plasma down to the surface of the planet. When the ions strike the surface, they knock off neutrally charged atoms and send them on a loop high into the sky.');
+
+-- Table: in_depth_planets
+CREATE TABLE IF NOT EXISTS in_depth_planets (planet_id INTEGER REFERENCES in_depth (id) NOT NULL, in_depth_id INTEGER REFERENCES in_depth (id) NOT NULL);
+INSERT INTO in_depth_planets (planet_id, in_depth_id) VALUES (1, 1);
+
+-- Table: moons
+CREATE TABLE IF NOT EXISTS moons (id INTEGER PRIMARY KEY);
+
+-- Table: planets
+CREATE TABLE IF NOT EXISTS planets (id INTEGER UNIQUE PRIMARY KEY, planet_name TEXT, overview TEXT);
+INSERT INTO planets (id, planet_name, overview) VALUES (1, 'Mercury', 'The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth''s Moon.
+
+The Latest
+ Check Out Our New Space
+From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere.
+
+Because of Mercury''s elliptical – egg-shaped – orbit, and sluggish rotation, the Sun appears to rise briefly, set, and rise again from some parts of the planet''s surface. The same thing happens in reverse at sunset.');
+INSERT INTO planets (id, planet_name, overview) VALUES (2, 'Venus', 'Venus is the second planet from the Sun and is Earth’s closest planetary neighbor. It’s one of the four inner, terrestrial (or rocky) planets, and it’s often called Earth’s twin because it’s similar in size and density. These are not identical twins, however – there are radical differences between the two worlds.
+
+The Latest
+ Check Out Our New Space
+ Venus'' ‘Squishy'' Outer Shell May Be Resurfacing the Planet
+Venus has a thick, toxic atmosphere filled with carbon dioxide and it’s perpetually shrouded in thick, yellowish clouds of sulfuric acid that trap heat, causing a runaway greenhouse effect. It’s the hottest planet in our solar system, even though Mercury is closer to the Sun. Surface temperatures on Venus are about 900 degrees Fahrenheit (475 degrees Celsius) – hot enough to melt lead. The surface is a rusty color and it’s peppered with intensely crunched mountains and thousands of large volcanoes. Scientists think it’s possible some volcanoes are still active.
+
+Venus has crushing air pressure at its surface – more than 90 times that of Earth – similar to the pressure you''d encounter a mile below the ocean on Earth.
+
+Another big difference from Earth – Venus rotates on its axis backward, compared to most of the other planets in the solar system. This means that, on Venus, the Sun rises in the west and sets in the east, opposite to what we experience on Earth. (It’s not the only planet in our solar system with such an oddball rotation – Uranus spins on its side.)
+
+Venus was the first planet to be explored by a spacecraft – NASA’s Mariner 2 successfully flew by and scanned the cloud-covered world on Dec. 14, 1962. Since then, numerous spacecraft from the U.S. and other space agencies have explored Venus, including NASA’s Magellan, which mapped the planet''s surface with radar. Soviet spacecraft made the most successful landings on the surface of Venus to date, but they didn’t survive long due to the extreme heat and crushing pressure. An American probe, one of NASA''s Pioneer Venus Multiprobes, survived for about an hour after impacting the surface in 1978.
+
+More recent Venus missions include ESA’s Venus Express (which orbited from 2006 until 2016) and Japan’s Akatsuki Venus Climate Orbiter (orbiting since 2016).
+
+NASA’s Parker Solar Probe has made multiple flybys of Venus. On Feb. 9, 2022, NASA announced the spacecraft had captured its first visible light images of the surface of Venus from space during its February 2021 flyby.
+
+');
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;

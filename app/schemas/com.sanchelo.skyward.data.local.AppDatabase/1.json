@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "37a7fbed724bd2c80b6eb75198ed938d",
+    "entities": [
+      {
+        "tableName": "planets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`planetId` INTEGER NOT NULL, `name` TEXT, `overview` TEXT, PRIMARY KEY(`planetId`))",
+        "fields": [
+          {
+            "fieldPath": "planetId",
+            "columnName": "planetId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "planetName",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "overview",
+            "columnName": "overview",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "planetId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '37a7fbed724bd2c80b6eb75198ed938d')"
+    ]
+  }
+}
